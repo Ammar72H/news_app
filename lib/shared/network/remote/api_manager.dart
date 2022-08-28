@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
@@ -8,41 +9,34 @@ import '../../components/constant.dart';
 
 class ApiManager{
 
-  static Future<SourcesResponse> getSources()async{
-  //  call Api
 
-    var uri =Uri.https(BASEURL, '/v2/top-headlines/sources',
-    { "apiKey":APIKEY });
-    
-     var response = await http.get(uri);
-
-     try{
-       var bodeString = response.body;
-       var json = jsonDecode(bodeString);
-       var sourcesResponse = SourcesResponse.fromJson(json);
-       return sourcesResponse;
-
-     }catch(e){
-       throw e;
-     }
-
-
-
-  }
-
-  static Future<NewsResponse> getNews(Sources sources)async{
-    var uri =Uri.https(BASEURL, 'v2/everything',  { "apiKey":APIKEY ,"sources":sources.id});
-    var response = await http.get(uri);
+  static Future<SourcesResponse> getSources(String categoriID) async{
+    // call api
+    var uri =Uri.https(BASEURL, '/v2/top-headlines/sources',{"apikey":APIKEY ,
+      'category':categoriID});
+    var response =  await http.get(uri);
     try{
-      var bodeString = response.body;
-      var json = jsonDecode(bodeString);
-      var newsResponse = NewsResponse.fromJson(json);
-      return newsResponse;
-
+      var bodyString=   response.body;
+      var json = jsonDecode(bodyString);
+      var sourcesResponse=SourcesResponse.fromJson(json);
+      return sourcesResponse;
     }catch(e){
       throw e;
     }
+  }
 
+
+  static Future<NewsResponse> getNews(Sources source,String search)async{
+    var uri =Uri.https(BASEURL, '/v2/everything',{"apikey":APIKEY,"sources":source.id , 'q':search});
+    var response =  await http.get(uri);
+    try{
+      var bodyString=   response.body;
+      var json = jsonDecode(bodyString);
+      var newsResponse=NewsResponse.fromJson(json);
+      return newsResponse;
+    }catch(e){
+      throw e;
+    }
   }
 
 }
