@@ -20,30 +20,23 @@ class MyThemeData {
 
     textTheme: TextTheme(
       headline1: TextStyle(
-        fontSize: 30,
-        color: whiteColor,
-        fontWeight: FontWeight.bold,
+        fontSize: 13,
+        color: Colors.black,
+         fontWeight: FontWeight.bold,
       ),
       headline2: TextStyle(
-        fontSize: 18,
-        color: Colors.black,
-        fontWeight: FontWeight.w300,
+        fontSize: 13,
+        color: Colors.grey,
+        // fontWeight: FontWeight.w300,
       ),
-      headline3: TextStyle(
-        fontSize: 20,
-        color: Colors.black,
-        fontWeight: FontWeight.w300,
-      ),
+
+
       subtitle1: TextStyle(
-        fontSize: 25,
-        color: PrimaryColor,
-        fontWeight: FontWeight.w400,
+        fontSize: 10,
+        color: Colors.grey,
+        // fontWeight: FontWeight.w300,
       ),
-      bodyText1: TextStyle(
-        fontSize: 20,
-        color: Colors.black,
-        fontWeight: FontWeight.w500,
-      ),
+
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: PrimaryColor,
