@@ -21,7 +21,7 @@ class _SettingItemsState extends State<SettingItems> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text('Languages',
-              style: Theme.of(context).textTheme.subtitle1),
+              style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 20)),
           SizedBox(
             height: 15,
           ),
@@ -38,7 +38,7 @@ class _SettingItemsState extends State<SettingItems> {
                   padding: const EdgeInsets.all(5.0),
                   child: Text(
                     provider.AppLanguage == 'en' ? 'English' : 'العربية',
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 20),
                   ),
                 )),
           ),

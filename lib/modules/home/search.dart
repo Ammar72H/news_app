@@ -28,6 +28,7 @@ class _SearchPageState extends State<SearchPage> {
                 color: Colors.white, borderRadius: BorderRadius.circular(5)),
             child: Center(
               child: TextField(
+                style: TextStyle(color: Colors.black,fontSize: 18),
                 decoration: InputDecoration(
                     prefixIcon:IconButton(
                         icon: const Icon(Icons.search),
@@ -49,7 +50,14 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
           )),
-       backgroundColor: Theme.of(context).backgroundColor,
+              body: Container(
+              decoration: BoxDecoration(
+              image: DecorationImage(
+              image: AssetImage('assets/images/pattern.png'),
+              fit: BoxFit.cover,
+              ),
+              ),
+    ),
     );
   }
 }
