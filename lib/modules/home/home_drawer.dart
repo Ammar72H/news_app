@@ -18,7 +18,7 @@ class HomeDrawer extends StatelessWidget {
         children: [
           Container(
             color: Theme.of(context).primaryColor,
-            padding: EdgeInsets.symmetric(vertical: 70),
+            padding: EdgeInsets.symmetric(vertical: 55),
             width: double.infinity,
             child:Center(child: Text('News App',style: Theme.of(context).textTheme.headline1!.copyWith(
                 fontSize: 25,color: Colors.white
@@ -29,10 +29,10 @@ class HomeDrawer extends StatelessWidget {
               onMenuItemClicked(CATEGORY);
             },
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(10.0),
               child: Row(children: [
-                Icon(Icons.list,),
-                SizedBox(width: 5,),
+                Icon(Icons.list,color: Colors.black,),
+                SizedBox(width: 8,),
                 Text('Categories',style: TextStyle(fontSize: 21),)
               ],),
             ),
@@ -44,10 +44,10 @@ class HomeDrawer extends StatelessWidget {
               onMenuItemClicked(SETTING);
             },
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(10.0),
               child: Row(children: [
-                Icon(Icons.settings,),
-                SizedBox(width: 5,),
+                Icon(Icons.settings,color: Colors.black,),
+                SizedBox(width: 8,),
                 Text('Settings',style: TextStyle(fontSize: 21),)
               ],),
             ),
