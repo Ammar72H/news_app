@@ -48,8 +48,8 @@ class _ShowlanguageBottomSheetState extends State<ShowlanguageBottomSheet> {
             '$text',
             style: Theme.of(context)
                 .textTheme
-                .bodyText1!
-                .copyWith(color: Theme.of(context).primaryColor),
+                .headline1!.copyWith(fontSize: 20,color: Theme.of(context).primaryColor)
+
           ),
           Icon(
             Icons.check,
@@ -63,7 +63,7 @@ class _ShowlanguageBottomSheetState extends State<ShowlanguageBottomSheet> {
         children: [
           Text(
             '$text',
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.headline1!.copyWith(fontSize: 20),
           ),
           Icon(
             Icons.check,

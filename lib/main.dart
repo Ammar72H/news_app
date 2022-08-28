@@ -5,14 +5,20 @@ import 'package:news/shared/styles/my_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MultiProvider(
+      providers: [
+      ChangeNotifierProvider(create: (_) => MyProviderApp(), child: MyApp()),
+  ],
+  child: MyApp(),));
 }
 
 class MyApp extends StatelessWidget {
-
+  late MyProviderApp myProviderApp;
   @override
   Widget build(BuildContext context) {
+    myProviderApp = Provider.of<MyProviderApp>(context);
     return MaterialApp(
+      locale: Locale(myProviderApp.AppLanguage),
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
       routes: {

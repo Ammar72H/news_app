@@ -37,18 +37,26 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           iconTheme: Theme.of(context).iconTheme,
           centerTitle: true,
-          title: Text('News app'),
+          title: Text('${selectedCategory?.title==null?'News App..!':selectedCategory?.title}'),
         ),
+
         drawer: HomeDrawer(onMenuItemClicked),
-        body: selectedCategory==null?CategoriesFragment(onCatgoryClicked)
-            :NewsFragment(selectedCategory!),
+           body:Container(
+            decoration: BoxDecoration(
+            image: DecorationImage(
+            image: AssetImage('assets/images/pattern.png'),
+            fit: BoxFit.cover,
+            ),
+            ),child:  selectedCategory==null?CategoriesFragment(onCatgoryClicked)
+              :NewsFragment(selectedCategory!)
+
+           )  );
 
 
-
-    );
   }
 
   Category? selectedCategory;
+  SettingItems? settingItems;
 
 
 
@@ -76,5 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
     });
   }
+  void onSettingClicked(Category category){
+    // change ui body
+    settingItems=SettingItems();
+    setState(() {
+
+    });
+  }
 
 }
+// settingItems==null?SettingItems():NewsFragment(selectedCategory!),
