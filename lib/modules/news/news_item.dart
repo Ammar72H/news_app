@@ -21,18 +21,21 @@ class NewsItem extends StatelessWidget {
             NewsDetailsScreen.routeName,
           arguments: articles
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Image.network(articles.urlToImage  ?? "",height: 180,fit: BoxFit.cover,),
-            SizedBox(height: 10,),
-            Text(articles.author??"",style: Theme.of(context).textTheme.subtitle1,),
-            SizedBox(height: 5,),
-            Text(articles.title??"",style: Theme.of(context).textTheme.headline1,),
-            SizedBox(height: 5,),
-            Text(articles.publishedAt??"",textAlign: TextAlign.right,style: Theme.of(context).textTheme.headline2,),
-            SizedBox(height: 20),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image.network(articles.urlToImage  ?? "",height: 180,fit: BoxFit.cover,),
+              SizedBox(height: 10,),
+              Text(articles.author??"",style: Theme.of(context).textTheme.subtitle1,),
+              SizedBox(height: 5,),
+              Text(articles.title??"",style: Theme.of(context).textTheme.headline1,),
+              SizedBox(height: 5,),
+              Text(articles.publishedAt??"",textAlign: TextAlign.right,style: Theme.of(context).textTheme.headline2,),
+              SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

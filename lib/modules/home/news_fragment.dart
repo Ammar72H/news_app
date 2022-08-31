@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:news/modules/home/setting_items.dart';
 import 'package:news/modules/home/tabs_controller.dart';
 
 import '../../models/SourcesResponse.dart';
@@ -8,7 +9,8 @@ import '../../shared/network/remote/api_manager.dart';
 
 class NewsFragment extends StatelessWidget {
   Category category;
-  NewsFragment(this.category);
+
+  NewsFragment(this.category,);
 
   @override
   Widget build(BuildContext context) {

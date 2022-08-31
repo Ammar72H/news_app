@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/modules/home/details/news_details_screen.dart';
 import 'package:news/modules/home/home_screen.dart';
+import 'package:news/modules/home/setting_items.dart';
 import 'package:news/providers/my_provider.dart';
 import 'package:news/shared/styles/my_theme.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName:(context) => HomeScreen(),
         NewsDetailsScreen.routeName:(context) => NewsDetailsScreen(),
+        SettingItems.routeName:(context) => SettingItems(),
       },
       theme: MyThemeData.lightTheme,
       // darkTheme: MyThemeData.darkTheme,

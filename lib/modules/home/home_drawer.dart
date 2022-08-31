@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news/modules/home/setting_items.dart';
 
-class HomeDrawer extends StatelessWidget {
+class HomeDrawer extends StatefulWidget {
 
   static const int CATEGORY=1;
   static const int SETTING=2;
@@ -8,6 +9,11 @@ class HomeDrawer extends StatelessWidget {
   Function onMenuItemClicked;
   HomeDrawer(this.onMenuItemClicked);
 
+  @override
+  State<HomeDrawer> createState() => _HomeDrawerState();
+}
+
+class _HomeDrawerState extends State<HomeDrawer> {
   @override
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
@@ -26,7 +32,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           InkWell(
             onTap: (){
-              onMenuItemClicked(CATEGORY);
+              widget.onMenuItemClicked(HomeDrawer.CATEGORY);
             },
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -40,8 +46,7 @@ class HomeDrawer extends StatelessWidget {
           InkWell
             (
             onTap: (){
-
-              onMenuItemClicked(SETTING);
+              widget.onMenuItemClicked(HomeDrawer.SETTING);
             },
             child: Padding(
               padding: const EdgeInsets.all(10.0),
