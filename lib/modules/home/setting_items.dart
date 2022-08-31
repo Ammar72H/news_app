@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '../../providers/my_provider.dart';
 
 class SettingItems extends StatefulWidget {
+  static const String routeName = "setting";
 
   @override
   State<SettingItems> createState() => _SettingItemsState();
