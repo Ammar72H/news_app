@@ -23,9 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             // Navigate to the Search Screen
             IconButton(
-                onPressed: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (_) => const SearchPage())),
-                icon: const Icon(Icons.search))
+                onPressed: () {
+
+                  showSearch(context: context, delegate: NewsSearch());
+
+                },
+
+                icon: const Icon(Icons.search,size: 30,))
           ],
           backgroundColor: Color(0xFF39A552),
           toolbarHeight: 90,
@@ -94,3 +98,4 @@ class _HomeScreenState extends State<HomeScreen> {
 
 }
 // settingItems==null?SettingItems():NewsFragment(selectedCategory!),
+
